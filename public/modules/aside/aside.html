@@ -1,0 +1,36 @@
+<div ms-controller="aside" id="feedback" ms-visible="show">
+    <div class="submit-question" ms-click="toggleShow">
+        <img src="/assets/images/deer_question.png" class="deer">
+        <span class="hint">意见反馈</span>
+    </div>
+
+    <div class="submit-question-form" ms-visible="show_feed">
+        <form action="">
+            <textarea class="form-control mb15 ng-dirty ng-valid ng-valid-required" placeholder="请输入你的问题" required="" style="margin-top: 0px; margin-bottom: 15px; height: 80px;"></textarea>
+            <input placeholder="输入邮箱,方便我们联系你" type="email"id="question_email" class="form-control mail mb15">
+
+            <div>
+                <button class="btn btn-gray-small w-p47 fl" type="button" ms-click="toggleShow">取消</button>
+                <div class="space-20"></div>
+                <button class="btn btn-green-small w-p47 fr" type="submit">提交</button>
+            </div>
+        </form>
+    </div>
+
+    <div ms-include-src="async_pic_advs">aside异步加载的广告...</div>
+<script>
+  var aside = avalon.define({
+    $id: "aside",
+    show: true,
+    show_feed: false,
+    toggleShow: function() {
+      aside.show_feed = !aside.show_feed;
+    },
+    async_pic_advs: "loading",
+  });
+
+  require(['../../modules/async/pic_advs/pic_advs'], function() {
+      avalon.log("加载aside异步广告模块完毕");
+  });  
+</script>
+</div>

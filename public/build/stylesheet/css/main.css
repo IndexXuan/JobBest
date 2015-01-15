@@ -1,0 +1,151 @@
+.h-v-center {
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -12px;
+  margin-left: -100px;
+  text-align: center;
+  font-size: 16px;
+  z-index: 99999; }
+
+.loading-with-dot {
+  display: inline-block;
+  width: 10px;
+  min-height: 2px;
+  padding-right: 2px;
+  border-left: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  background-color: currentColor;
+  background-clip: content-box;
+  box-sizing: border-box;
+  -webkit-animation: dot 4s infinite step-start both;
+  animation: dot 4s infinite step-start both;
+  *zoom: expression(this.innerHTML = '...');
+  /* IE7 */ }
+
+.loading-with-dot:before {
+  content: '...'; }
+
+/* IE8 */
+.loading-with-dot::before {
+  content: ''; }
+
+:root .loading-with-dot {
+  margin-left: 2px;
+  padding-left: 2px; }
+
+/* IE9+ */
+@-webkit-keyframes dot {
+  25% {
+    border-color: transparent;
+    background-color: transparent; }
+  /* zero point */
+  50% {
+    border-right-color: transparent;
+    background-color: transparent; }
+  /* one point */
+  75% {
+    border-right-color: transparent; }
+  /* two points */ }
+@keyframes dot {
+  25% {
+    border-color: transparent;
+    background-color: transparent; }
+  /* zero point */
+  50% {
+    border-right-color: transparent;
+    background-color: transparent; }
+  /* one point */
+  75% {
+    border-right-color: transparent; }
+  /* two points */ }
+.ms-controller,
+.ms-important {
+  visibility: hidden; }
+
+header {
+  position: static;
+  margin-bottom: 20px; }
+
+.header-inner {
+  position: relative;
+  max-width: 1200px;
+  overflow: hidden;
+  margin: 0 auto; }
+
+header .title {
+  font-size: 36px;
+  color: #bcbcbc;
+  line-height: 100px;
+  float: left;
+  margin-left: 10px; }
+
+header .slogin {
+  font-size: 16px;
+  color: #bcbcbc;
+  line-height: 100px;
+  float: left;
+  margin-left: 10px;
+  position: relative;
+  top: 7px;
+  color: #B4A5A5; }
+
+.search-wrapper {
+  position: absolute;
+  top: 36px;
+  right: 8px; }
+
+.page-title {
+  font-size: 30px;
+  line-height: 30px;
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  margin-left: -60px;
+  color: #AFA7A7; }
+
+.header-right-panel {
+  display: none;
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  right: 18px;
+  top: 7px; }
+
+.header-right-panel a {
+  color: #837c7c; }
+
+.header-right-panel .login-li {
+  float: left;
+  width: 45%; }
+
+.header-right-panel .signin-li {
+  float: right;
+  width: 40%; }
+
+nav {
+  text-align: center; }
+
+.nav .item {
+  display: inline-block;
+  width: 33%;
+  color: #bcbcbc;
+  padding: 20px 25px;
+  font-size: 20px;
+  text-decoration: none; }
+
+.listcard {
+  display: inline-block;
+  margin: 5px;
+  width: 48%; }
+
+.footer {
+  padding-top: 40px; }
+
+.footer-text {
+  line-height: 24px;
+  font-size: 14px;
+  letter-spacing: 1px; }
+
+/*# sourceMappingURL=main.css.map */

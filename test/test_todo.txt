@@ -1,0 +1,66 @@
+#1 grunt tasks test:
+
+=== seed tasks list:
+--- watch
+--- connect
+--- open
+--- htmlhint
+--- sass
+--- uglify
+--- concat
+--- cssmin
+--- imagemin
+--- clean
+--- copy
+
+=== combined tasks list:
+// basic tasks
+--- buildscss   ( sass, concat:css, cssmin )
+--- buildjs     ( uglify, concat:js )
+--- buildimages ( imagemin )
+
+// manual tasks (手动任务)
+--- checkhtml   ( htmlhint )
+--- buildcss    ( clean:css, copy:css, buildscss )
+--- buildcssjs  ( buildcss, buildjs )
+--- buildall    ( buildscss, buildjs, buildimages )
+--- mv2bdfolder ( clean, copy:font, copy:css ) // move the resource to the build folder with no other effect, just move;
+
+// helper tasks
+--- rebuild     ( mv2bdfolder, buildall )
+
+// workflow tasks
+--- workflow    ( rebuild, connect:livereload, open, watch )
+
+=== watch tasks list:
+scss   ( buildscss )
+js     ( buildjs )
+fonts  ( clean:font, copy:fonts )
+images ( clean:images, imagemin )
+css    ( buildcss )
+
+#2 Why need test (todo)
+test seed tasks and combined-tasks
+
+seed tasks is easy to test, because it deal with very simple target,
+we do something and see the except result(usually the dest folder created 
+correctly, so as the ext) and know they run well.
+
+but, combined-tasks it very complex and usually they should compare more than
+one folder and files to check whether it works well. What's more, the watch tasks
+are more difficute to test.So we need test carefully and repeat times with times...
+
+For example, watch the images folder in public/assets/images and the watch task
+will run to imagemin them and push to public/build/images, the task it easy and
+appearantly to know the effect. While that it we delete a image in the src folder
+and the target folder should also be removed automaticly. What's more? If our 
+code not so great and the task has great relationship with other task and some
+code changed when we find better way or with other target, we need find and check
+more facts and do more work repeatedly... Opps...
+
+So, make the test automaticly and to avoid error from humanbeing's weakness is a
+way to make our workflow better and is the only way~ 
+
+#3 App test
+
+unit test and function test even human test
