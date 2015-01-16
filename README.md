@@ -59,22 +59,31 @@ Author:  `Pengrui (pengruixiaoxuan@gmail.com)` [weibo@IndexXuan](http://weibo.co
                 css/            -->  build css
                     min/        -->  min build css
                 app-build.css   -->  production use css file
-        data/                   -->  data used to generate pages, simulate Back-End APIs
+        data/                   -->  data used to generate the pages, simulate Back-End APIs
             index.json          -->  index module simulation data
             resume.json         -->  resume module simulation data
         modules/                -->  modules to manage the project
             header/             -->  header module folder
                 header.html     -->  header tpl
                 header.js       -->  header ctrl or VM
-            ...                 -->  other modules with the same structure
-    test/                       -->  test info or task define  
-    .bowerrc                     -->  bower configuration file
-    .gitignore                   -->  gitigore file
-    bower.json                   -->  for bower
-    package.json                 -->  for npm
-    README.md                    -->  This readme
+            ...                 -->  other modules with the same structure  
+    test/                       -->  test info or task define
+    .bowerrc                    -->  bower configuration file
+    .gitignore                  -->  gitigore file
+    bower.json                  -->  for bower
+    package.json                -->  for npm
+    README.md                   -->  This readme  
 
-#### Contact
+#### Tips  
+    vender/css will be just move to build/stylesheet/css, and will be min and 
+    concat with other files in that folder, since the order of css is very important,
+    so, prefix the vender/css/*.css and make them concat correctly.
+    For example: normalize need first and style.css need second and custom.css should 
+    be the last. todo: aaa_normalize and bbb_style.css and ccc_custom.css, if so, even
+    the app.css concat with them will not wrong! Also you can config the order of the 
+    css files in grunt tasks. 
+
+#### Reference
 
 For more information on
 
@@ -87,46 +96,50 @@ For more information on
 
 #### Usage:  
 ---------
-
-    * Install Node and NPM - http://nodejs.org/
-    * Install Bower - http://bower.io/  
-    * Install Grunt - http://gruntjs.com/  
-
-    clone or download in local path.  
-    1. mkdir yourproject  
-    2. cd yourproject && npm install (require grunt and bower)  
-    3. cd public && bower install  
-    4. grunt workflow   
+   
+    clone or download this repo in local path. (need node&npm, bower and grunt)
+    1.  mkdir yourproject  
+    2.  cd yourproject && npm install (require grunt and bower)  
+    3.  cd public && bower install  
+    4.  grunt workflow   
     
-    Once you have your environment setup, just run: http:localhost:9000/!#/
+Once you have your environment setup, just run and [click here:](http:localhost:9000/!#/ "server start")
 
 #### Tasks APIs
 ---------
+
     basic tasks:
     ============
     buildscss   ( sass, concat:css, cssmin )  
     buildjs     ( uglify, concat:js )  
     buildimages ( imagemin )  
 
+
     manual tasks:
     ============
-    clean       ( clean ) clean the build folder
+    publish     ( clean ) clean the build folder to publish
     checkhtml   ( htmlhint )  
     buildcss    ( clean:css, copy:css, buildscss )  
     buildcssjs  ( buildcss, buildjs )  
     buildall    ( buildscss, buildjs, buildimages )  
     mv2bdfolder ( clean, copy:font, copy:css )  move resource in assets to build folder for build
 
+
     helper tasks:  
     ============
     rebuild     ( mv2bdfolder, buildall )  
+
 
     workflow tasks:  
     ============
     workflow    ( rebuild, connect:livereload, open, watch )   
 
 #### Todos:  
-    
+    [x] Back-End (DB and Server)  
+    [x] APIs Design  
+    [x] Test  
+    Custom this project, Ready Go!  
+ 
 #### License
     MIT     
     Just for self learn. 
