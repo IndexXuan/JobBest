@@ -66,13 +66,13 @@ Author:  `Pengrui (pengruixiaoxuan@gmail.com)` [weibo@IndexXuan](http://weibo.co
             header/             -->  header module folder
                 header.html     -->  header tpl
                 header.js       -->  header ctrl or VM
-            ...                 -->  other modules with the same structure
+            ...                 -->  other modules with the same structure  
     test/                       -->  test info or task define
-   .bowerrc                     -->  bower configuration file
-   .gitignore                   -->  gitigore file
-   bower.json                   -->  for bower
-   package.json                 -->  for npm
-   README.md                    -->  This readme
+    .bowerrc                     -->  bower configuration file
+    .gitignore                   -->  gitigore file
+    bower.json                   -->  for bower
+    package.json                 -->  for npm
+    README.md                    -->  This readme
 
 #### Contact
 
