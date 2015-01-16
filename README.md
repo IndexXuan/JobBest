@@ -13,7 +13,8 @@ Author:  `Pengrui (pengruixiaoxuan@gmail.com)` [weibo@IndexXuan](http://weibo.co
 
 #### Description:  
 
-    A pure front-end seed project with grunt workflow and support livereload.Build by avalonjs，a lightweight、 highperformance MVVM framework.
+    A pure front-end seed project with grunt workflow and support livereload.  
+Build by avalonjs，a lightweight、 highperformance MVVM framework.
 
 #### ENV
 
