@@ -1,151 +1,67 @@
-Name:    JobBest Project   
-Date:    2015.1  
-Author:  `Pengrui (pengruixiaoxuan@gmail.com)` [weibo@IndexXuan](http://weibo.com/u/3180300392 "IndexXuan")  
+#1 grunt tasks test:
 
-#### Intro:
----------
-    This project is a homework of my UML course and I am learning MVVM framework.
-    So I make it a seed project of avalonjs with livereload and grunt workflow support
-    Static resource are from JobDeer(by AngularJS) and if infringement,  please
-    tell me and i'll remove them immediately. 3Q ~
+=== seed tasks list:
+--- watch
+--- connect
+--- open
+--- htmlhint
+--- sass
+--- uglify
+--- concat
+--- cssmin
+--- imagemin
+--- clean
+--- copy
 
-#### Description:  
-    A pure Front-end seed project with grunt workflow and support livereload.  
-    open source under the MIT License.  
-    most static resource are copy from JobDeer, if something wrong or infringement,  
-    tell me and i'll remove them immediately.
+=== combined tasks list:
+// basic tasks
+--- buildscss   ( sass, concat:css, cssmin )
+--- buildjs     ( uglify, concat:js )
+--- buildimages ( imagemin )
 
-#### ENV
----------
-    node@0.10.33 with npm@1.4.28
+// manual tasks (手动任务)
+--- publish     ( clean ) // clean the build folder and for publish
+--- checkhtml   ( htmlhint )
+--- buildcss    ( clean:css, copy:css, buildscss )
+--- buildcssjs  ( buildcss, buildjs )
+--- buildall    ( buildscss, buildjs, buildimages )
+--- mv2bdfolder ( clean, copy:font, copy:css ) // move the resource to the build folder with no other effect, just move;
 
-    Front-End
-       scss
-       avalon( MVVM )
+// helper tasks
+--- rebuild     ( mv2bdfolder, buildall )
 
-    Back-End
-       [x]todo 
+// workflow tasks
+--- workflow    ( rebuild, connect:livereload, open, watch )
 
-    DB
-       [x]todo 
-      
-    Test
-       [x]todo 
+=== watch tasks list:
+scss   ( buildscss )
+js     ( buildjs )
+fonts  ( clean:font, copy:fonts )
+images ( clean:images, imagemin )
+css    ( buildcss )
 
-    others
-       bower
-       grunt  
+#2 Why need test (todo)
+test seed tasks and combined-tasks
+-
+seed tasks is easy to test, because it deal with very simple target,
+we do something and see the except result(usually the dest folder created 
+correctly, so as the ext) and know they run well.
 
-#### Directory Layout
+but, combined-tasks it very complex and usually they should compare more than
+one folder and files to check whether it works well. What's more, the watch tasks
+are more difficute to test.So we need test carefully and repeat times with times...
 
-    node_modules                -->  NodeJS modules - install using npm install
-    public/                     -->  all of the files to be used in on the client side
-        bower_components        -->  for bower components - install using bower install
-        assets/                 -->  assets files
-            fonts/              -->  web font files
-            images/             -->  images
-            js/                 -->  js files to 
-            scss/               -->  scss files
-            vender/             -->  3rd-party's resource or others
-                css/            -->  vender css files
-                js/             -->  vender js files
-        build/                  -->  build files
-            fonts/              -->  web font files, copy from assets/fonts/
-            images/             -->  images, imagemin from assets/images/
-            javascript/         -->  build folder from assets/js and vender/js
-                js/             -->  build js
-                app-build.js    -->  production use js file
-            stylesheet/         -->  build folder from assets/scss and vender/css
-                css/            -->  build css
-                    min/        -->  min build css
-                app-build.css   -->  production use css file
-        data/                   -->  data used to generate the pages, simulate Back-End APIs
-            index.json          -->  index module simulation data
-            resume.json         -->  resume module simulation data
-        modules/                -->  modules to manage the project
-            header/             -->  header module folder
-                header.html     -->  header tpl
-                header.js       -->  header ctrl or VM
-            ...                 -->  other modules with the same structure  
-    test/                       -->  test info or task define
-    .bowerrc                    -->  bower configuration file
-    .gitignore                  -->  gitigore file
-    bower.json                  -->  for bower
-    package.json                -->  for npm
-    README.md                   -->  This readme  
+For example, watch the images folder in public/assets/images and the watch task
+will run to imagemin them and push to public/build/images, the task it easy and
+appearantly to know the effect. While that it we delete a image in the src folder
+and the target folder should also be removed automaticly. What's more? If our 
+code not so great and the task has great relationship with other task and some
+code changed when we find better way or with other target, we need find and check
+more facts and do more work repeatedly... Opps...
 
-#### Tips  
-    vender/css will be just move to build/stylesheet/css, and will be min and 
-    concat with other files in that folder, since the order of css is very important,
-    so, prefix the vender/css/*.css and make them concat correctly.
-    For example: normalize need first and style.css need second and custom.css should 
-    be the last. todo: aaa_normalize and bbb_style.css and ccc_custom.css, if so, even
-    the app.css concat with them will not wrong! Also you can config the order of the 
-    css files in grunt tasks. 
+So, make the test automaticly and to avoid error from humanbeing's weakness is a
+way to make our workflow better and is the only way~ 
 
-#### Reference
+#3 App test
 
-For more information on
-
-* NodeJS - http://nodejs.org/
-* Grunt - http://gruntjs.com/
-* Bower - http://bower.io/
-* avalonjs - https://github.com/RubyLouvre/avalon/
-* Sass - http://www.sass-lang.com/
-* Bootstrap - http://getbootstrap.com/
-
-#### Usage:  
----------
-   
-    clone or download this repo in local path. (need node&npm, bower and grunt)
-    1.  mkdir yourproject  
-    2.  cd yourproject && npm install (require grunt and bower)  
-    3.  cd public && bower install  
-    4.  grunt workflow   
-    
-Once you have your environment setup, just run and [click here:](http:localhost:9000/!#/ "server start")
-
-#### Tasks APIs
----------
-
-    basic tasks:
-    ============
-    buildscss   ( sass, concat:css, cssmin )  
-    buildjs     ( uglify, concat:js )  
-    buildimages ( imagemin )  
-
-
-    manual tasks:
-    ============
-    publish     ( clean ) clean the build folder to publish
-    checkhtml   ( htmlhint )  
-    buildcss    ( clean:css, copy:css, buildscss )  
-    buildcssjs  ( buildcss, buildjs )  
-    buildall    ( buildscss, buildjs, buildimages )  
-    mv2bdfolder ( clean, copy:font, copy:css )  move resource in assets to build folder for build
-
-
-    helper tasks:  
-    ============
-    rebuild     ( mv2bdfolder, buildall )  
-
-
-    workflow tasks:  
-    ============
-    workflow    ( rebuild, connect:livereload, open, watch )   
-
-#### Todos:  
-    [x] Back-End (DB and Server)  
-    [x] APIs Design  
-    [x] Test  
-    Custom this project, Ready Go!  
- 
-#### License
-    MIT     
-    Just for self learn. 
-
----------
-Thanks for :kissing_heart: `github`, [JobDeer](http://h5.jobdeer.com/app/list 'JobDeer'),  [司徒大大](http://www.cnblogs.com/rubylouvre/p/3181291.html "司徒正美, avalonjs作者") and all of my `friends` ~
-
-
-
+unit test and function test even human test
