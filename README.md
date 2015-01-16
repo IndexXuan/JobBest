@@ -59,15 +59,20 @@ Author:  `Pengrui (pengruixiaoxuan@gmail.com)` [weibo@IndexXuan](http://weibo.co
                 css/            -->  build css
                     min/        -->  min build css
                 app-build.css   -->  production use css file
-        data/                   -->  data used to generate the pages, simulate Back-End APIs
+        data/                   -->  data used to generate pages, simulate Back-End APIs
             index.json          -->  index module simulation data
             resume.json         -->  resume module simulation data
         modules/                -->  modules to manage the project
             header/             -->  header module folder
                 header.html     -->  header tpl
                 header.js       -->  header ctrl or VM
+<<<<<<< HEAD
             ...                 -->  other modules with the same structure  
     test/                       -->  test info or task define
+=======
+            ...                 -->  other modules with the same structure
+    test/                       -->  test info or task define  
+>>>>>>> origin/master
     .bowerrc                     -->  bower configuration file
     .gitignore                   -->  gitigore file
     bower.json                   -->  for bower
