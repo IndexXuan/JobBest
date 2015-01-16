@@ -59,7 +59,7 @@ Author:  `Pengrui (pengruixiaoxuan@gmail.com)` [weibo@IndexXuan](http://weibo.co
                 css/            -->  build css
                     min/        -->  min build css
                 app-build.css   -->  production use css file
-        data/                   -->  data used to generate the pages, simulate Back-End APIs
+        data/                   -->  data used to generate pages, simulate Back-End APIs
             index.json          -->  index module simulation data
             resume.json         -->  resume module simulation data
         modules/                -->  modules to manage the project
