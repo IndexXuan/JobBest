@@ -1,22 +1,25 @@
-Name:    JobBest Project   
+# JobBest
+
+Name:    JobBest    
 Date:    2015.1  
 Author:  `Pengrui (pengruixiaoxuan@gmail.com)` [weibo@IndexXuan](http://weibo.com/u/3180300392 "IndexXuan")  
 
 #### Intro:
----------
+
     This project is a homework of my UML course and I am learning MVVM framework.
     So I make it a seed project of avalonjs with livereload and grunt workflow support
     Static resource are from JobDeer(by AngularJS) and if infringement,  please
     tell me and i'll remove them immediately. 3Q ~
 
 #### Description:  
+
     A pure Front-end seed project with grunt workflow and support livereload.  
     open source under the MIT License.  
     most static resource are copy from JobDeer, if something wrong or infringement,  
     tell me and i'll remove them immediately.
 
 #### ENV
----------
+
     node@0.10.33 with npm@1.4.28
 
     Front-End
@@ -75,6 +78,7 @@ Author:  `Pengrui (pengruixiaoxuan@gmail.com)` [weibo@IndexXuan](http://weibo.co
     README.md                   -->  This readme  
 
 #### Tips  
+
     vender/css will be just move to build/stylesheet/css, and will be min and 
     concat with other files in that folder, since the order of css is very important,
     so, prefix the vender/css/*.css and make them concat correctly.
@@ -95,7 +99,6 @@ For more information on
 * Bootstrap - http://getbootstrap.com/
 
 #### Usage:  
----------
    
     clone or download this repo in local path. (need node&npm, bower and grunt)
     1.  mkdir yourproject  
@@ -106,7 +109,6 @@ For more information on
 Once you have your environment setup, just run and [click here:](http:localhost:9000/!#/ "server start")
 
 #### Tasks APIs
----------
 
     basic tasks:
     ============
@@ -135,16 +137,17 @@ Once you have your environment setup, just run and [click here:](http:localhost:
     workflow    ( rebuild, connect:livereload, open, watch )   
 
 #### Todos:  
+
     [x] Back-End (DB and Server)  
     [x] APIs Design  
     [x] Test  
     Custom this project, Ready Go!  
  
 #### License
+
     MIT     
     Just for self learn. 
 
----------
 Thanks for :kissing_heart: `github`, [JobDeer](http://h5.jobdeer.com/app/list 'JobDeer'),  [司徒大大](http://www.cnblogs.com/rubylouvre/p/3181291.html "司徒正美, avalonjs作者") and all of my `friends` ~
 
 
