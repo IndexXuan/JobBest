@@ -13,10 +13,7 @@ Author:  `Pengrui (pengruixiaoxuan@gmail.com)` [weibo@IndexXuan](http://weibo.co
 
 #### Description:  
 
-    A pure Front-end seed project with grunt workflow and support livereload.  
-    open source under the MIT License.  
-    most static resource are copy from JobDeer, if something wrong or infringement,  
-    tell me and i'll remove them immediately.
+    A pure front-end seed project with grunt workflow and support livereload.Build by avalonjs，a lightweight、 highperformance MVVM framework.
 
 #### ENV
 
@@ -100,13 +97,13 @@ For more information on
 
 #### Usage:  
    
-    clone or download this repo in local path. (need node&npm, bower and grunt)
+    clone or download this repo in local path. (need node&npm, sass, bower and grunt)
     1.  mkdir yourproject  
     2.  cd yourproject && npm install (require grunt and bower)  
     3.  cd public && bower install  
     4.  grunt workflow   
     
-Once you have your environment setup, just run and [click here:](http:localhost:9000/!#/ "server start")
+Once you have your environment setup, just run and —> [click here] (http:localhost:9000/!#/ "server start")
 
 #### Tasks APIs
 
