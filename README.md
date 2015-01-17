@@ -50,7 +50,7 @@ Author:  `Pengrui (pengruixiaoxuan@gmail.com)` [weibo@IndexXuan](http://weibo.co
             vender/             -->  3rd-party's resource or others
                 css/            -->  vender css files
                 js/             -->  vender js files
-        build/                  -->  build files
+        build/                  -->  build files - build by grunt
             fonts/              -->  web font files, copy from assets/fonts/
             images/             -->  images, imagemin from assets/images/
             javascript/         -->  build folder from assets/js and vender/js
@@ -98,13 +98,13 @@ For more information on
 
 #### Usage:  
    
-    clone or download this repo in local path. (need node&npm, sass, bower and grunt)
+    clone or download this repo in local path. (require node&npm, sass, bower and grunt)
     1.  mkdir yourproject  
-    2.  cd yourproject && npm install (require grunt and bower)  
-    3.  cd public && bower install  
+    2.  cd yourproject && npm install
+    3.  bower install  
     4.  grunt workflow   
     
-Once you have your environment setup, just run and —> [click here] (http:localhost:9000/!#/ "server start")
+Once you have your environment setup, just run and [click here -> http://localhost:9000/!#/] (http://localhost:9000/!#/ "server start")
 
 #### Tasks APIs
 
