@@ -2,7 +2,7 @@
 
 Name:    JobBest    
 Date:    2015.1  
-Author:  `Pengrui (pengruixiaoxuan@gmail.com)` [weibo@IndexXuan](http://weibo.com/u/3180300392 "IndexXuan")  
+Author:  `Pengrui (pengruixiaoxuan@gmail.com, 1203802652@qq.com)` [weibo@IndexXuan](http://weibo.com/u/3180300392 "IndexXuan")  
 
 #### Intro:
 
@@ -99,10 +99,10 @@ For more information on
 #### Usage:  
    
     clone or download this repo in local path. (require node&npm, sass, bower and grunt)
-    1.  mkdir yourproject  
-    2.  cd yourproject && npm install
-    3.  bower install  
-    4.  grunt workflow   
+    1. mkdir yourproject && cd yourproject
+    2. npm install
+    3. bower install  
+    4. grunt workflow   
     
 Once you have your environment setup, just run and [click here -> http://localhost:9000/!#/] (http://localhost:9000/!#/ "server start")
 
