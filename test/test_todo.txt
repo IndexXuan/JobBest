@@ -64,4 +64,5 @@ way to make our workflow better and is the only way~
 
 #3 App test
 
-unit test and function test even human test
+unit test and function test even human test.
+will use some frameworks to help.
