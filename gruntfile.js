@@ -29,7 +29,7 @@ module.exports = function (grunt) {
                     'public/assets/**/*.js',
                     'public/assets/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
                     'public/assets/fonts/*',
-                    'public/assets/vender/**/*.{js,css}'
+                    'public/assets/vendor/**/*.{js,css}'
                 ]
             },
 
@@ -59,7 +59,7 @@ module.exports = function (grunt) {
             },
 
             css: {
-                files: ['public/assets/vender/css/*.css'],
+                files: ['public/assets/vendor/css/*.css'],
                 tasks: ['buildcss'] // scss要一起build才行
             }                    
         }, // watch 
@@ -106,19 +106,26 @@ module.exports = function (grunt) {
         }, // html hint
 
         sass: {
-          dist: {
-            files: [{
-              expand: true,
-              cwd: 'public/assets/scss',
-              src: ['*.scss'],
-              dest: 'public/build/stylesheet/css/',
-              ext: '.css'
+            options: {
+                trace: true,
+                style: 'expanded', // normal css style
+                update: true // only update when sth changed
+            },
+            dist: {
+                files: [{
+                expand: true,
+                cwd: 'public/assets/scss',
+                src: ['*.scss'],
+                dest: 'public/build/stylesheet/css/',
+                ext: '.css'
             }]
-          }
+
+            }
         }, //build scss
 
         uglify: {
             options: {
+                sourceMap: true
                 //banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd HH:mm:ss") %> */\n'//添加banner
             },
             buildall: {//按原文件结构压缩js文件夹内所有JS文件
@@ -137,6 +144,7 @@ module.exports = function (grunt) {
 
         concat: {
             options: {
+                sourceMap: true,
                 mangle: false, //不混淆变量名
                 preserveComments: 'some', //不删除注释，还可以为 false（删除全部注释），some（保留@preserve @license @cc_on等注释）
                 banner:'/*! \n  Project  Name: <%= pkg.name %> \n  Last Modified: <%= grunt.template.today("yyyy-mm-dd") %>\n*/\n'//添加banner
@@ -150,7 +158,7 @@ module.exports = function (grunt) {
 
             css: {
                 src: ['public/build/stylesheet/css/*.css'],
-                dest:'public/build/stylesheet/css/app.css'
+                dest:'public/build/stylesheet/app.css'
             }
         }, // concat js and css
 
@@ -163,7 +171,7 @@ module.exports = function (grunt) {
                 ext: '.min.css'
             },
             minappcss: {
-                src: ['public/build/stylesheet/css/app.css'],
+                src: ['public/build/stylesheet/app.css'],
                 dest:'public/build/stylesheet/app-build.css'
             }
         }, // css min, only app-build.css to min...
@@ -201,7 +209,7 @@ module.exports = function (grunt) {
           },
           css: {
             files: [            
-              {expand: true, cwd: 'public/assets/vender/css/', src: ['*.css'], dest: 'public/build/stylesheet/css/'}                    
+              {expand: true, cwd: 'public/assets/vendor/css/', src: ['*.css'], dest: 'public/build/stylesheet/css/'}                    
             ],
           }
         }

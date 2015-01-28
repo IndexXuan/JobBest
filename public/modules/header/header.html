@@ -1,28 +1,34 @@
 <header class="header clearfix" role="header">
-  <div class="header-inner">
-    <a href="/index.html#!/"><span class="title">JobBest</span></a><span class="slogin">工作就要家近、钱多、活少 ~</span>
-  
-    <span class="page-title" ms-view="title"></span>
+    <div class="header-inner">
+        <a href="/index.html#!/"><span class="title">JobBest</span></a><span class="slogin">工作就要家近、钱多、活少 ~</span>
 
-    <a class="search-wrapper f20 gray pointer pull-right desktop-menu" ms-click="toggleSearch">
-      <img src="/assets/images/search.png" width="24" height="24">
-    </a>
+        <span class="page-title" ms-view="title"></span>
 
-    <ul class="header-right-panel">
-      <li class="login-li"><a href="javascript:">登录</a></li> |
-      <li class="signin-li"><a href="">注册</a></li>
-    </ul>
-  </div>
+        <a class="search-wrapper f20 gray pointer pull-right desktop-menu" ms-click="toggleSearch">
+            <img src="/assets/images/search.png" width="24" height="24">
+        </a>
+
+        <ul class="header-right-panel">
+            <li class="login-li"><a href="javascript:" ms-click="login">登录</a>
+            </li> |
+            <li class="signin-li"><a href="javascript:" ms-click="signin">注册</a>
+            </li>
+        </ul>
+    </div>
     <div class="row p15" ms-visible="search_show" style="background-color:#fff; margin: 0 auto;">
         <form name="search_list" class="form-inline" autocomplete="off">
-          <div class="col-md-10 col-sm-9 col-xs-8 search_text_div">
-          <input type="text" name="keyword" class="form-control line-input pull-left" placeholder="请输入关键词，如：北京 PHP" style="width:100%">
-          </div>
-          <div class="col-md-2 col-sm-3 col-xs-4 text-right pr0 search_btn_div">
-            <button type="submit" class="btn btn-green plr24 search_btn">搜索</button>
-            <button typy="button" class="btn btn-gray pointer search_close" ms-click="toggleSearch">×</button>
-          </div>
+            <div class="col-md-10 col-sm-9 col-xs-8 search_text_div">
+                <input type="text" name="keyword" class="form-control line-input pull-left" placeholder="请输入关键词，如：北京 PHP" style="width:100%">
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-4 text-right pr0 search_btn_div">
+                <button type="submit" class="btn btn-green plr24 search_btn">搜索</button>
+                <button typy="button" class="btn btn-gray pointer search_close" ms-click="toggleSearch">×</button>
+            </div>
         </form>
+    </div>
+
+    <div class="login-container" ms-visible="loginContainerShow">
+      
     </div>
 
 </header>

@@ -7,16 +7,16 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <title>JobBest- New Experiences</title>
-<link rel="stylesheet" href="build/stylesheet/app-build.css">
+<link rel="stylesheet" href="build/stylesheet/app.css">
 </head>
 <body ms-controller="root">
 
     <div id="loading" class="h-v-center" ms-visible="loading_show">即将呈现<span class="loading-with-dot"></span></div>
-    <div id="error"   class="h-v-center" ms-visible="error_show">Opps! ... 服务器开了小差!</div>
+    <div id="error"   class="h-v-center" style="display: none;" ms-visible="error_show">Opps! ... 服务器开了小差!</div>
 
     <div ms-include-src="async_banner_advs" class="hide" data-include-replace="true">首页异步加载的广告模块,不成功不显示</div>
     <div ms-include-src="header" data-include-replace="true"></div>
-    <div ms-include-src="nav" data-include-replace="true"></div>
+<!--     <div ms-include-src="nav" data-include-replace="true"></div> -->
     <div ms-view style="min-height: 500px;"></div>
     <div ms-include-src="aside" data-include-replace="true"></div> 
     <div ms-include-src="footer" data-include-replace="true"></div> 

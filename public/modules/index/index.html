@@ -1,9 +1,9 @@
 <div class="container">
     <!-- listcard -->
-    <div class="listcard" ms-repeat-seeker="userData.list" data-repeat-rendered="hideLoading">
+    <div class="listcard" ms-repeat-seeker="userData" data-repeat-rendered="hideLoading">
         <div class="header clearfix" ms-css-background="{{seeker.bgcolor}}" style="background-color: rgb(177, 158, 209); background-position: initial initial; background-repeat: initial initial;">
             <div class="avatar">
-                <img src="http://h5.jobdeer.com/img/avatar/6.png">
+                <img src="../../build/images/3.png" height="250" width="234">
             </div>
             <div class="userinfo">
                 <h3 class="">No.{{seeker.id}}号</h3>
@@ -31,6 +31,6 @@
             </div>
         </div><!-- bottom -->
     </div><!-- /listcard -->
-    <button ng-click="prepage()" class="page-pre" type="button" ms-attr-disabled="loading" title="上一页" ms-visible="pre_btn_show"> <i class="fa fa-chevron-left"></i> </button>
-    <button ng-click="nextpage()" class="page-next" type="button" ms-attr-disabled="loading" title="下一页" ms-visible="next_btn_show">  <i class="fa fa-chevron-right"></i> </button>
+    <button ms-click="prev_page" ms-visible="prev_btn_show" title="上一页" class="page-pre" type="button"> <i class="fa fa-chevron-left"></i> </button>
+    <button ms-click="next_page" ms-visible="next_btn_show" title="下一页" class="page-next" type="button">  <i class="fa fa-chevron-right"></i> </button>
 </div>
