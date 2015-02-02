@@ -8,12 +8,20 @@
             <img src="/assets/images/search.png" width="24" height="24">
         </a>
 
-        <ul class="header-right-panel">
+        <ul class="header-right-panel" ms-if="!isLogin">
             <li class="login-li"><a href="javascript:" ms-click="login">登录</a>
             </li> |
             <li class="signin-li"><a href="javascript:" ms-click="signin">注册</a>
             </li>
         </ul>
+
+        <ul class="header-right-panel" ms-if="isLogin">
+            <li class="login-li"><a href="#!/user">空间</a>
+            </li> |
+            <li class="signin-li"><a href="javascript:" ms-click="logout">退出</a>
+            </li>
+        </ul>
+
     </div>
     <div class="row p15" ms-visible="search_show" style="background-color:#fff; margin: 0 auto;">
         <form name="search_list" class="form-inline" autocomplete="off">
@@ -27,7 +35,7 @@
         </form>
     </div>
 
-    <div class="login-container" ms-visible="loginContainerShow">
+    <div class="login-container" ms-visible="loginContainer_show">
       
     </div>
 

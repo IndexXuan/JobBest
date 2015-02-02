@@ -1,18 +1,66 @@
 var _v = '0.0.8';
-
 require.config({//第一块，配置
-    baseUrl: "/",
+    baseUrl: '',
     paths: {
-        jquery: 'assets/vendor/js/jquery/2.1.3/jquery.min',
-        mmState: 'assets/vendor/js/avalon/1.391/mmState',
-        mmPromise: 'assets/vendor/js/avalon/1.391/mmPromise',
-        mmRouter: 'assets/vendor/js/avalon/1.391/mmRouter',
-        mmRequest: 'assets/vendor/js/avalon/1.391/mmRequest',
-        mmHistory: 'assets/vendor/js/avalon/1.391/mmHistory',
-    }
+        jquery: '/assets/vendor/js/jquery/2.1.3/jquery.min',
+        //avalon: "/assets/vendor/js/avalon/1.391/avalon",//必须修改源码，禁用自带加载器，或直接删提AMD加载器模块
+        //avalon: "/assets/vendor/js/avalon/1.391/avalon.shim",//必须修改源码，禁用自带加载器，或直接删提AMD加载器模块
+        //avalon: "/assets/vendor/js/avalon/1.391/avalon.mobile",
+        avalon: "/assets/vendor/js/avalon/1.391/avalon.modern.shim",
+
+        mmState: '/assets/vendor/js/avalon/1.391/mmState',
+        mmPromise: '/assets/vendor/js/avalon/1.391/mmPromise',
+        mmRouter: '/assets/vendor/js/avalon/1.391/mmRouter',
+        mmRequest: '/assets/vendor/js/avalon/1.391/mmRequest',
+        mmHistory: '/assets/vendor/js/avalon/1.391/mmHistory',
+        text: '/assets/vendor/js/require/2.1.11/text',
+        domReady: '/assets/vendor/js/require/2.1.11/domReady',
+        //css: '/assets/vendor/js/require/2.1.11/css.js',
+        css: '/assets/vendor/js/require/2.1.11/css',
+        // 微信 JS
+        //wxsdk: "http://res.wx.qq.com/open/js/jweixin-1.0.0",
+
+
+        // APP
+        //app: './modules/app',
+        // request 请求
+        //request: './modules/request',
+        // 微信 SDK 组件
+        //wx: './modules/wx',
+
+        // UI 组件[现只有 dialog]
+        //ui: './modules/ui/dialog/js'
+        // dialog:
+
+    },
+    priority: ['text', 'css'],
+    // 配置不兼容的模块
+    // shim: {
+    //     jquery: {
+    //         // 输出的变量名
+    //         exports: "jquery"
+    //     },
+    //     avalon: {
+    //         // deps数组，表明该模块的依赖性
+    //         deps: [],
+    //         // 输出的变量名
+    //         exports: "avalon",
+    //         init: function () {
+    //             // 禁止使用avalon自带的加载器
+    //             //avalon.config({
+    //             //    loader: false
+    //             //});
+    //             console.log("require avalon done!");
+    //         }
+    //     }
+    // },
+    //urlArgs: Math.random()
+    //urlArgs: "bust=" + (new Date()).getTime()
+    urlArgs: '_v=' + _v//"bust=v0.0.1"  + debug
 });
 
-require(["jquery", "ready!", "mmState"], function ($) {
+
+require(["jquery", "avalon", "domReady!", "mmState"], function ($, avalon) {//第二块，添加根VM（处理共用部分）
 
     var __v = '?_v=' + _v;
 
@@ -59,6 +107,7 @@ require(["jquery", "ready!", "mmState"], function ($) {
         //============= user and login ==============//
         userInfo: {},
         isLogin: false,
+        userData: {},
         loginContainer_show: false,
         login: function() {
             if (root.isLogin) {
@@ -70,7 +119,7 @@ require(["jquery", "ready!", "mmState"], function ($) {
                     root.showLoginContainer();
                     $(".login-container").html(avalon.templateCache.login);
                     avalon.log("加载登陆框完毕!");
-                    avalon.scan(document.querySelector('.login-container')); // type: dom | 动态加载进来的内容需要扫描收集依赖、绑定
+                    avalon.scan(); // 收集依赖**********************
                 });               
             } else {
                 root.showLoginContainer();
@@ -89,6 +138,7 @@ require(["jquery", "ready!", "mmState"], function ($) {
             root.isLogin = false;
             // do sth... to clear login infos
         },
+        // datas above inited from loginVM in async page
         //============ user and login ===============//
 
         //============ set data for index ===========//
@@ -114,9 +164,8 @@ require(["jquery", "ready!", "mmState"], function ($) {
         },
         //============ set data for index ===========//
         
-        //============== index pages ================//
+        //=============== init pages ================//
         totalPages: 1,
-        userData: {},
         prev_btn_show: false,
         next_btn_show: false,
         renderIndexFn: function(pageIndex) {
@@ -146,6 +195,7 @@ require(["jquery", "ready!", "mmState"], function ($) {
             root.currentPageIndex = pageIdx;
             avalon.log('next_page' + pageIdx);
             root.renderIndexFn(pageIdx); // Rerender index
+
             avalon.router.navigate("?p=" + pageIdx);
         },
         prev_page: function() {
@@ -154,9 +204,9 @@ require(["jquery", "ready!", "mmState"], function ($) {
             root.currentPageIndex = pageIdx;
             avalon.log('prev_page' + pageIdx);
             root.renderIndexFn(pageIdx); // Rerender index
-            avalon.router.navigate("?p=" + pageIdx);
+            avalon.router.navigate("p=" + pageIdx);
         },
-        //============== index pages ================//
+        //=============== init pages ================//
         
         //=============== error handler =============//
         error: function() {
@@ -261,7 +311,7 @@ require(["jquery", "ready!", "mmState"], function ($) {
     }); // state resume.detail
     
     // 异步加载的页面模块
-    require(['/modules/async/advs/advs'], function() {
+    require(['modules/async/advs/advs'], function() {
         avalon.log("加载异步广告模块完毕");
     });   
   

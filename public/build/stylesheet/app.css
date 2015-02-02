@@ -910,6 +910,16 @@ img {
   z-index: 99999;
 }
 
+.mask {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  opacity: .6;
+  z-index: 9999;
+}
+
 .loading-with-dot {
   display: inline-block;
   width: 10px;
