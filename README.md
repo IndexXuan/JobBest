@@ -146,7 +146,5 @@ Once you have your environment setup, just run and [click here -> http://localho
     MIT     
     Just for self learn. 
 
-Thanks for :kissing_heart: `github`, [JobDeer](http://h5.jobdeer.com/app/list 'JobDeer'),  [司徒大大](http://www.cnblogs.com/rubylouvre/p/3181291.html "司徒正美, avalonjs作者") and all of my `friends` ~
-
-
+Thanks for :kissing_heart: `github`, [JobDeer](http://h5.jobdeer.com/app/list 'JobDeer'),  [司徒大大](http://www.cnblogs.com/rubylouvre/p/3181291.html "司徒正美, avalonjs作者") and all of my `friends` ~ aha!
 
