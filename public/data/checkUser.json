@@ -1,0 +1,16 @@
+{
+    "code": 0,
+    "message": "",
+    "data": {
+        "isMe": true,
+        "friends": 15,
+        "messageNum": 20,
+        "message": [{
+
+        }, {
+
+        }, {
+
+        }]
+    }
+}

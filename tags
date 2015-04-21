@@ -1,0 +1,5 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+LIVERELOAD_PORT	/home/xiaoxuan/workspace/JobBest/gruntfile.js	/^var LIVERELOAD_PORT = 35729;$/;"	v	language:JavaScript
+lrSnippet	/home/xiaoxuan/workspace/JobBest/gruntfile.js	/^var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});$/;"	v	language:JavaScript
+module.exports	/home/xiaoxuan/workspace/JobBest/gruntfile.js	/^};$/;"	f	language:JavaScript
+mountFolder	/home/xiaoxuan/workspace/JobBest/gruntfile.js	/^var mountFolder = function (connect, dir) {$/;"	f	language:JavaScript

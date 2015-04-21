@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>JobBest - New Job Experiences</title>
+    <link rel="stylesheet" href="build/stylesheet/app.css">
+    <!-- dev env -->
+    <!-- <link rel="stylesheet" href="build/stylesheet/app-build.css"> -->
+</head>
+
+<body ms-controller="root">
+
+    <div id="globalMask" class="mask" ms-visible="mask_show"></div>
+    <div id="loading" class="h-v-center" ms-visible="loading_show">即将呈现<span class="loading-with-dot"></span>
+    </div>
+    <div id="error" class="h-v-center" style="display: none;" ms-visible="error_show">Opps! ... 服务器开了小差!</div>
+    <div ms-include-src="async_banner_advs" class="hide" data-include-replace="false">首页异步加载的广告模块,不成功不显示</div>
+    <div ms-include-src="header" data-include-replace="true"></div>
+    <div ms-view style="min-height: 500px;"></div>
+    <div ms-include-src="aside" data-include-replace="true"></div>
+    <div ms-include-src="footer" data-include-replace="true"></div>
+
+    <script src="assets/vendor/js/jquery/2.1.3/jquery.min.js"></script>
+    <script src="assets/vendor/js/avalon/1.391/avalon.js"></script>
+    <script src="build/javascript/app-build.js"></script>
+
+    <script src="http://localhost:35729/livereload.js"></script>
+    <!-- dev env -->
+</body>
+
+</html>
+

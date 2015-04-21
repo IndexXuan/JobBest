@@ -1,0 +1,25 @@
+{
+  "name": "JobBest",
+  "version": "0.0.1",
+  "authors": [
+    "IndexXuan <pengruihaha@163.com>"
+  ],
+  "description": "JobBest, Best for job",
+  "keywords": [
+    "JobBest"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "avalon": "~1.3.8",
+    "jquery": "~2.1.3",
+    "normalize-scss": "~3.0.2"
+  }
+}
