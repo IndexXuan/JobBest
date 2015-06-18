@@ -88,6 +88,7 @@ require(["jquery", "ready!", "mmState"], function ($) {
         logout: function() {
             root.isLogin = false;
             // do sth... to clear login infos
+			avalon.router.navigate("/");
         },
         //============ user and login ===============//
 
@@ -109,7 +110,7 @@ require(["jquery", "ready!", "mmState"], function ($) {
                         root.userData = data.data.list;
                         root.totalPages = data.data.totalPages;
                     }
-                })
+                });
             }
         },
         //============ set data for index ===========//

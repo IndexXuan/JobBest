@@ -1,4 +1,5 @@
 'use strict';
+
 var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 var mountFolder = function (connect, dir) {
@@ -73,7 +74,7 @@ module.exports = function (grunt) {
             livereload: {
                 options: {
                     middleware: function (connect) {
-                        return [
+                        return [ // server root path 
                             mountFolder(connect, 'public'),
                             lrSnippet
                         ];
@@ -89,7 +90,7 @@ module.exports = function (grunt) {
         }, //open browser
 
         htmlhint: {
-            build: {
+            hint: {
                 options: {
                     'tag-pair': true,
                     'tagname-lowercase': true,
@@ -212,7 +213,22 @@ module.exports = function (grunt) {
               {expand: true, cwd: 'public/assets/vendor/css/', src: ['*.css'], dest: 'public/build/stylesheet/css/'}                    
             ],
           }
-        }
+        },
+
+		karma: {
+			options: { // shared config
+				configFile: 'karma.conf.js'
+			},
+			unit: {
+				options: {
+					singleRun: true // specific config example
+				}
+			}
+		},
+
+		jshint: {
+			all: ['gruntfile.js', 'public/assets/js/*.js']
+		}
 
     });
     // Tasks config end...
@@ -223,11 +239,12 @@ module.exports = function (grunt) {
     grunt.registerTask('buildimages', 'build images files...', ['imagemin']);
      
     // manual tasks (手动任务)
-    grunt.registerTask('checkhtml', 'check html files...', ['htmlhint']);
+    grunt.registerTask('checkfiles', 'check files...', ['htmlhint', 'jshint']);
     grunt.registerTask('buildcss', 'build css files...', ['clean:css', 'copy:css', 'buildscss']);
     grunt.registerTask('buildcssjs', 'build all css and js files...', ['buildcss', 'buildjs']);
     grunt.registerTask('buildall', 'build all files...', ['buildscss', 'buildjs', 'buildimages']);
     grunt.registerTask('mv2bdfolder', 'move files to build folder...', ['clean', 'copy:fonts', 'copy:css']);
+    grunt.registerTask('test', 'test the projects...', ['karma']);
     
     // helper tasks
     grunt.registerTask('rebuild', 'rebuild all files...', ['mv2bdfolder', 'buildall']); 
@@ -243,3 +260,4 @@ module.exports = function (grunt) {
     });
 
 };
+

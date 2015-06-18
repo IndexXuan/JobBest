@@ -70,6 +70,7 @@ Author:  `Pengrui (pengruixiaoxuan@gmail.com, 1203802652@qq.com)` [weibo@IndexXu
             ...                 -->  other modules with the same structure  
     test/                       -->  test info or task define
     .bowerrc                    -->  bower configuration file
+	.jshint                     -->  jshint file
     .gitignore                  -->  gitigore file
     bower.json                  -->  for bower
     package.json                -->  for npm
@@ -118,11 +119,12 @@ Once you have your environment setup, just run and [click here -> http://localho
     manual tasks:
     ============
     publish     ( clean ) clean the build folder to publish
-    checkhtml   ( htmlhint )  
     buildcss    ( clean:css, copy:css, buildscss )  
     buildcssjs  ( buildcss, buildjs )  
     buildall    ( buildscss, buildjs, buildimages )  
     mv2bdfolder ( clean, copy:font, copy:css )  move resource in assets to build folder for build
+    checkfiles  ( htmlhint, jshint )  
+	test        ( karma )
 
 
     helper tasks:  

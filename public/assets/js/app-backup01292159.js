@@ -159,7 +159,7 @@ require(["jquery", "avalon", "domReady!", "mmState"], function ($, avalon) {//ç¬
                         root.userData = data.data.list;
                         root.totalPages = data.data.totalPages;
                     }
-                })
+                });
             }
         },
         //============ set data for index ===========//

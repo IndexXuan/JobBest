@@ -1,0 +1,6 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+chai	/home/xiaoxuan/workspace/JobBest/test/test_spec_webdriver.js	/^var chai = require('chai');$/;"	v	language:JavaScript
+chaiwebdriver	/home/xiaoxuan/workspace/JobBest/test/test_spec_webdriver.js	/^var chaiwebdriver = require('chai-webdriver');$/;"	v	language:JavaScript
+sinonChar	/home/xiaoxuan/workspace/JobBest/test/common.js	/^var sinonChar = require('sinon-chai');$/;"	v	language:JavaScript
+sw	/home/xiaoxuan/workspace/JobBest/test/test_spec_webdriver.js	/^var sw = require('selenium-webdriver');$/;"	v	language:JavaScript
+webdriver	/home/xiaoxuan/workspace/JobBest/test/test_spec_selenium-webdriver.js	/^var webdriver = require('selenium-webdriver'),$/;"	v	language:JavaScript
